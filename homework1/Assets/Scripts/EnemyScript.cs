@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform spawnPoint;//Add empty gameobject as spawnPoint
-    public float minHeightForDeath;
-    public GameObject player; //Add your player
+    public GameObject player;//Add your player
 
-    void Update()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (player.transform.position.y < minHeightForDeath)
+        if (col.gameObject.name.Equals("Player"))
         {
             player.transform.position = spawnPoint.position;
         }
