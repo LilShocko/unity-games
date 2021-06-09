@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MoveScript : MonoBehaviour{
     private Rigidbody2D rb;
+    public Transform player;
     public float jumpForce;
     bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundlayer;
     public Animator animator;
+    public GameObject bulletPrefab;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -43,6 +45,20 @@ public class MoveScript : MonoBehaviour{
            // animator.SetBool("IsJumping", true);
             rb.velocity = Vector2.up * jumpForce;
         }
+        if (Input.GetKeyDown("space"))
+        {
+            //transform.Translate(0, 50 * Time.deltaTime, 0);
+            // animator.SetBool("IsJumping", true);
+            
+            shootBullet();
+        }
+
+    }
+    public void shootBullet()
+    {
+        GameObject b = Instantiate(bulletPrefab) as GameObject;
+        b.transform.position = player.transform.position;
+
 
     }
 }

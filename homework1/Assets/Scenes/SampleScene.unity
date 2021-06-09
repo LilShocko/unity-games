@@ -532,12 +532,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e85535771d9aed45906999818b503ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 508897598}
   jumpForce: 15
   groundCheck: {fileID: 1635311485}
   groundlayer:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 508897602}
+  bulletPrefab: {fileID: 8648459624764504788, guid: 748dc02fb02c444479b295e7a52f3a22,
+    type: 3}
 --- !u!212 &508897597
 SpriteRenderer:
   m_ObjectHideFlags: 0
